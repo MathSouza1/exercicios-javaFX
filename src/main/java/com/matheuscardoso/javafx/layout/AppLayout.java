@@ -11,16 +11,9 @@ public class AppLayout extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         Parent parent = null;
-        VBox temp = new VBox();
-        temp.getChildren().add(new Square());
-        temp.getChildren().add(new Square());
-        temp.getChildren().add(new Square());
-        temp.getChildren().add(new Square());
-        temp.getChildren().add(new Square());
-        temp.getChildren().add(new Square());
-        temp.getChildren().add(new Square());
+        parent = new AnchorPaneTest();
 
-        Scene scene = new Scene(temp, 800, 600);
+        Scene scene = new Scene(parent, 800, 600);
         stage.setScene(scene);
         stage.setTitle("Layout managers");
         stage.show();
