@@ -9,8 +9,6 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import java.util.Objects;
-
 public class Counter extends Application {
 
     private int counter = 0;
@@ -18,7 +16,10 @@ public class Counter extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         Label lblTitle = new Label("Counter");
+        lblTitle.getStyleClass().add("title");
+
         Label lblNumber = new Label("0");
+        lblNumber.getStyleClass().add("number");
 
         Button decrementButton = new Button("-");
         decrementButton.setOnAction(action -> {
@@ -45,7 +46,12 @@ public class Counter extends Application {
         vBox.getChildren().add(lblNumber);
         vBox.getChildren().add(hBox);
 
+        String cssPath = getClass().getResource("/basic/Counter.css").toExternalForm();
+
         Scene scene = new Scene(vBox, 400, 400);
+        scene.getStylesheets().add(cssPath);
+        scene.getStylesheets().add("https://fonts.googleapis.com/css?family=Oswald");
+
         stage.setScene(scene);
         stage.show();
     }
