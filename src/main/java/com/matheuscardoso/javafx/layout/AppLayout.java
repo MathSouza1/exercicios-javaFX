@@ -11,7 +11,8 @@ public class AppLayout extends Application {
     public void start(Stage stage) throws Exception {
         Parent parent = null;
 //      parent = new AnchorPaneTest();
-        parent = new BorderPaneTest();
+//      parent = new BorderPaneTest();
+        parent = new FlowPaneTest();
         Scene scene = new Scene(parent, 800, 600);
         stage.setScene(scene);
         stage.setTitle("Layout managers");
