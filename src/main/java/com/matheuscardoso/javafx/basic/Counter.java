@@ -13,13 +13,24 @@ import java.util.Objects;
 
 public class Counter extends Application {
 
+    private int counter = 0;
+
     @Override
     public void start(Stage stage) throws Exception {
         Label lblTitle = new Label("Counter");
         Label lblNumber = new Label("0");
 
         Button decrementButton = new Button("-");
+        decrementButton.setOnAction(action -> {
+            counter--;
+            lblNumber.setText(Integer.toString(counter));
+        });
+
         Button incrementButton = new Button("+");
+        incrementButton.setOnAction(action -> {
+            counter++;
+            lblNumber.setText(Integer.toString(counter));
+        });
 
         HBox hBox = new HBox();
         hBox.setAlignment(Pos.CENTER);
