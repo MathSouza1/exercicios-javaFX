@@ -13,4 +13,7 @@ module org.example.exerciciosjavafx {
 
     opens com.matheuscardoso.javafx.basic to javafx.fxml;
     exports com.matheuscardoso.javafx.basic;
+
+    opens com.matheuscardoso.javafx.layout to javafx.fxml;
+    exports com.matheuscardoso.javafx.layout;
 }
