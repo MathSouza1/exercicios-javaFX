@@ -23,5 +23,19 @@ public class StackPaneTest extends StackPane {
                  getChildren().get(5).toBack();
             }
         });
+
+        Thread thread = new Thread(() -> {
+            while (true) {
+                try {
+                    Thread.sleep(3000);
+                    Platform.runLater(() -> {
+                        getChildren().get(0).toFront();
+                    });
+                } catch (Exception ignored) {
+                }
+            }
+        });
+        thread.setDaemon(true);
+        thread.start();
     }
 }
